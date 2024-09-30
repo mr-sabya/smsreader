@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('phone');
             $table->text('message');
+            $table->timestamp('timestamp');
             $table->boolean('is_read')->default(0);
             $table->timestamps();
         });

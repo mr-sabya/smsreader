@@ -15,12 +15,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+
 Route::post('/login', [App\Http\Controllers\Api\LoginController::class, 'login']);
+
+Route::get('messages', [App\Http\Controllers\Api\MessageController::class, 'index']);
+// get by phone
+Route::get('message/get/phone/{phone}', [App\Http\Controllers\Api\MessageController::class, 'getByPhone']);
+
+// get last data
+Route::get('message/get/latest', [App\Http\Controllers\Api\MessageController::class, 'getLast']);
+
+Route::post('message/create', [App\Http\Controllers\Api\MessageController::class, 'store']);
 
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [App\Http\Controllers\Api\LoginController::class, 'logout']);
 
 
-    Route::post('message/create', [App\Http\Controllers\Api\MessageController::class, 'store']);
 });

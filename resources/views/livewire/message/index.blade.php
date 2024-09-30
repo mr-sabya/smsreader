@@ -33,7 +33,7 @@
                 <hr>
                 <p style="font-size: 20px;">{{ $message->message }}</p>
                 <hr>
-                <p>{{ $message->date }}, {{ $message->time }}</p>
+                <p class="d-flex justify-content-between"><span>{{ date('d-m-Y h:i a', strtotime($message->timestamp)) }}</span> <span>{{ \Carbon\Carbon::parse($message->timestamp)->diffForHumans() }}</span></p>
             </div>
         </div>
         @empty
@@ -41,6 +41,10 @@
             <p class="text-center"> No Message Found!!</p>
         </div>
         @endforelse
+
+        <div class="col-lg-12">
+            {{ $messages->links() }}
+        </div>
 
     </div>
     <!-- 4-blocks row end -->
