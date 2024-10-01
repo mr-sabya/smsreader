@@ -15,12 +15,28 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+
 Route::post('/login', [App\Http\Controllers\Api\LoginController::class, 'login']);
+
+Route::get('messages', [App\Http\Controllers\Api\MessageController::class, 'index']);
+
+//get all sms by phone
+Route::get('messages/{phone}', [App\Http\Controllers\Api\MessageController::class, 'getAllByPhone']);
+
+// get by phone
+Route::get('message/get/phone/{phone}', [App\Http\Controllers\Api\MessageController::class, 'getByPhone']);
+
+// get last data
+Route::get('message/get/latest', [App\Http\Controllers\Api\MessageController::class, 'getLast']);
+
+// get last data by phone
+Route::get('message/get/latest/{phone}', [App\Http\Controllers\Api\MessageController::class, 'getLastByPhone']);
+
+Route::post('message/create', [App\Http\Controllers\Api\MessageController::class, 'store']);
 
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [App\Http\Controllers\Api\LoginController::class, 'logout']);
 
 
-    Route::post('message/create', [App\Http\Controllers\Api\MessageController::class, 'store']);
 });

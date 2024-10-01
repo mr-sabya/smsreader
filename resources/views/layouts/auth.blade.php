@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Quantum Able Bootstrap 4 Admin Dashboard Template</title>
+    <title>Login -SMS Reader Api Dashboard</title>
 
     <!-- Meta -->
     <meta charset="utf-8">
@@ -15,7 +15,6 @@
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700" rel="stylesheet">

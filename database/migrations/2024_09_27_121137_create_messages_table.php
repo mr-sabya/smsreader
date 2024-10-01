@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
-            $table->string('phone');
+            $table->string('sender');
+            $table->string('receiver');
             $table->text('message');
+            $table->timestamp('timestamp');
             $table->boolean('is_read')->default(0);
             $table->timestamps();
         });

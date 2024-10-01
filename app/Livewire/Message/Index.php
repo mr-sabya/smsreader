@@ -18,6 +18,14 @@ class Index extends Component
         $this->short = "DESC";
     }
 
+    public function deleteAll()
+    {
+        $messages = Message::all();
+        foreach($messages as $message){
+            $message->delete();
+        }    
+    }
+
 
     public function render()
     {

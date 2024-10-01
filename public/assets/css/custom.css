@@ -15,3 +15,17 @@
     gap: 10px;
     align-items: center;
 }
+
+.justify-content-between{
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 425px) {
+    .search .card{
+        flex-direction: column;
+    }
+    .search .short,
+    .search .card .form{
+        width: 100%;
+    }
+}
